@@ -55,20 +55,12 @@ public class Calculator {
 
 	public double calline() {
 		if (line == 1) {
-			return 0;
-		} else if (addline() < 0 && grade == 1) { // gold 그냥 추가요금
-			return 14.5 * (line - 1);
-		} else if (addline() < 0 && grade == 2) { // silver 그냥 추가요금
-			return 21.5 * (line - 1);
-		}
-		if (addline() >= 0 && grade == 1) { // gold & 가족할인 0
-			return 14.5 * 2 + addline() * 5;
-		}
-		if (addline() >= 0 && grade == 2) { // silver & 가족할인 0
-			return 21.5 * 2 + addline() * 5;
-		} else {
-			return -1;
-		}
+			return 0;}
+		if(grade==1)
+			addline()>=0?return 14.5 * 2 + addline() * 5:return -1;
+		else if(grade ==2)
+			addline()>=0?return 21.5 * 2 + addline() * 5:return -1;
+		return 0;
 	}
 
 	public String result() {
