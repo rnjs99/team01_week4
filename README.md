@@ -14,7 +14,7 @@
 git 연동을 한 뒤 maven 프로젝트를 생성하는 법
   1. eclipse에서 git를 연동한 뒤 새 프로젝트를 생성 할 때 [Maven Project]를 생성한다
   2. New Maven Project 에서 Use default Workspace location에 체크를 하여 위치를 정한 뒤 [Next]
-    (만약 Maven기반의 Templet을 만들고 싶다면 [Create a simple project]에 체크한다)
+  (만약 Maven기반의 Templet을 만들고 싶다면 [Create a simple project]에 체크한다)
   3. [Group Id]를 team01 로 설정하였고 [Artifact Id]를 team01.04 으로 설정함
   4. [Pakage]를 jar로 설정하고 [Finish]로 프로젝트를 생성한다.
   5. 생성된 Packge는 git와 연결되어 있지 않으므로 [Team]-[Share Project]-[Git]를 통해 저장소를 설정하고 [Finish]
