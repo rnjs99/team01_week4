@@ -52,6 +52,8 @@
         <version>0.7.6.201602180812</version>
         <configuration>
        	  <dataFile>${jaCoCoExecutionDataFile}</dataFile>
+       	  <destfile>${basedir}/target/coverage-reports/jacoco-unit.exec</destfile> <!-- add -->
+          <datafile>${basedir}/target/coverage-reports/jacoco-unit.exec</datafile> <!-- add -->
         </configuration>
         <executions>
           <execution>
@@ -60,14 +62,13 @@
                 <goal>prepare-agent</goal>
             </goals>
           </execution>
-                <!---목적지 설정
-                <configuration>
-       		              <propertyName>jacoco.agent.argLine</propertyName>
-       		              <destFile>${jaCoCoExecutionDataFile}</destFile>
-			          </configuration>
-            </goals>
-            </execution>
-            <execution> 
+          <!--<execution> <!-- add -->
+          <!--  <id>prepare-unit-tests</id> <!-- add -->
+          <!--  <goals> <!-- add -->
+          <!--    <goal>prepare-agent</goal> <!-- add -->
+          <!--  </goals> <!-- add -->
+         <!-- </execution> <!-- add -->
+           <!-- <execution> 
                   			<id>jacoco-report</id>
                   		  <phase>verify</phase>
                   		  <goals>
