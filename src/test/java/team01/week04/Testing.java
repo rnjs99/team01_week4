@@ -14,15 +14,13 @@ public class Testing {
 		Scanner linesc = new Scanner(System.in);
 		Scanner yn = new Scanner(System.in);
 		String question;
-		System.out.print("�벑湲됱쓣 �엯�젰�븯�꽭�슂 : Gold(1), Silver(2) : ");
+		Loginfo.info("등급을 입력하세요 : Gold(1), Silver(2) : ");
 		cal.grade = gradesc.nextInt();
-		System.out.print("�넻�솕 �떆媛꾩쓣 �쟻�뼱二쇱꽭�슂(遺�) : ");
+		Loginfo.info("통화 시간을 적어주세요(분) : ");
 		cal.time = timesc.nextInt();
-		System.out.print("�쉶�꽑 媛쒖닔瑜� �쟻�뼱二쇱꽭�슂 : ");
+		Loginfo.info("회선 개수를 적어주세요 : ");
 		cal.line = linesc.nextInt();
-		System.out.println(cal.result());
-		System.out.print("怨꾩냽 吏꾪뻾�븯�떆寃좎뒿�땲源�?(y/n) : ");
-		question = yn.next();
+		Loginfo.info(cal.result());
 	}
 	@Test
 	public void testaddine(){
