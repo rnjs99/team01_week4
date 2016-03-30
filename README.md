@@ -20,7 +20,7 @@ git 연동을 한 뒤 maven 프로젝트를 생성하는 법
   5. 생성된 Packge는 git와 연결되어 있지 않으므로 [Team]-[Share Project]-[Git]를 통해 저장소를 설정하고 [Finish]
   6. git와 연결이 되었다면 '>'표시(꺽쇠)가 표시된다.
 
-===이 후 수정한 것을 [commit]과 [push] 하기위한 방법===
+===이 후 수정한 것을 [commit]과 [push] 하기위한 방법===<br>
 파일 옆에 '?'표시가 떠있는 상태라면 git 저장소에 해당 파일이 추가되지 않았다는 의미이다.
    1. [Team]-[Add to Index]
    2. [Team]-[Commit]
