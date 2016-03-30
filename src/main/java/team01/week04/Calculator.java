@@ -74,8 +74,10 @@ public class Calculator {
 		}
 	}
 
-	@SuppressWarnings("resource")
+		@SuppressWarnings("resource")
 	public static void main(String[] args) {
+		 final Logger LOGGER = Logger.getLogger(
+				    Thread.currentThread().getStackTrace()[0].getClassName() );
 		for (;;) {
 			Calculator cal = new Calculator();
 			Scanner gradesc = new Scanner(System.in);
@@ -83,19 +85,19 @@ public class Calculator {
 			Scanner linesc = new Scanner(System.in);
 			Scanner yn = new Scanner(System.in);
 			String question;
-			System.out.print("등급을 입력하세요 : Gold(1), Silver(2) : ");
+			LOGGER.info("등급을 입력하세요 : Gold(1), Silver(2) : ");
 			cal.grade = gradesc.nextInt();
-			System.out.print("통화 시간을 적어주세요(분) : ");
+			LOGGER.info("통화 시간을 적어주세요(분) : ");
 			cal.time = timesc.nextInt();
-			System.out.print("회선 개수를 적어주세요 : ");
+			LOGGER.info("회선 개수를 적어주세요 : ");
 			cal.line = linesc.nextInt();
-			System.out.println(cal.result());
-			System.out.print("계속 진행하시겠습니까?(y/n) : ");
+			LOGGER.info(cal.result());
+			LOGGER.info("계속 진행하시겠습니까?(y/n) : ");
 			question = yn.next();
 			if (question.equals("n")) {
 				break;
 			} else {
-				System.out.println();
+				LOGGER.info("\n");
 				continue;
 			}
 		}
