@@ -1,7 +1,9 @@
+package team01.week04;
+
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-package team01;
+
 
 public class Calculator {
 	int grade;
