@@ -1,4 +1,4 @@
-package team01.week04;
+package week04.team01;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
