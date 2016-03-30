@@ -1,7 +1,7 @@
 # group1_tp
 실전코딩 1조 github local 저장 확인
 <br>
-<<eclips에서 git 연동>>
+===eclips에서 git 연동===
   1. Git Repositories에서 [Clone Git Repository]를 누른다.
   2. Location의 URI에 자신이 fork한 Git저장소의 주소를 입력한 뒤 [Next]
   3. Destination의 Directory를 설정하고 설치할 branch를 결정한다
