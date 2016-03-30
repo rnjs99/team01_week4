@@ -1,4 +1,4 @@
-package week04.team01;
+package week04.team01.com;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
