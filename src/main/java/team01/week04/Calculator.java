@@ -66,7 +66,7 @@ public class Calculator {
 	}
 
 	public String result() {
-		if (money() == 0.0f)
+		if (Float.floatToRawIntBits(money()) == 0)
 			return "잘못된 값을 입력하셨습니다.";
 		else {
 			String str = String.format("%.2f", money());
