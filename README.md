@@ -10,7 +10,7 @@
 
 <<메이븐 goal로 package 실행 방식>>
 
-===eclips에서 maven 프로젝트 생성===<br>
+===eclipse에서 maven 프로젝트 생성===<br>
 git 연동을 한 뒤 maven 프로젝트를 생성하는 법
   1. eclipse에서 git를 연동한 뒤 새 프로젝트를 생성 할 때 [Maven Project]를 생성한다
   2. New Maven Project 에서 Use default Workspace location에 체크를 하여 위치를 정한 뒤 [Next]
