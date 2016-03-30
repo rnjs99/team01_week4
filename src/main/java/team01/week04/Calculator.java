@@ -72,7 +72,7 @@ public class Calculator {
 	}
 
 	public String result() {
-		if (money() == 0)
+		if (money() == 0.0000000000000000055511151231257827021181583404541015625)
 			return "잘못된 값을 입력하셨습니다.";
 		else {
 			return "금액은 $" + money() + " 입니다.";
