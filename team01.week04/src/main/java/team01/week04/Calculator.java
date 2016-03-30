@@ -1,36 +1,109 @@
-package team01.week04;
-
 import java.util.Scanner;
 
 public class Calculator {
 	String[] raw_type;
 	int grade, time, line;
-	public int money(){
+	public double money(){
 		if(grade==1){//gold
-		
+			return cal_line() + cal_minute();
 		}
 		else if(grade==2){//silver
-			
+			return cal_line() + cal_minute();
 		}
 		return 0;
 	}
 	
+	public int add_minute(){
+		if(grade==1) { //gold
+			return (time-1000 >= 0 ? time-1000 : -1);
+		}
+		else if(grade==2){ //silver
+			return (time-500 >= 0 ? time-500 : -1);
+		}
+		else{
+			return -100;
+		}
+	}
+	
+	public double cal_minute(){
+		if(add_minute()==-1 && grade==1) // gold, ì´ˆê³¼í•˜ì§€ ì•ŠìŒ
+			return 49.95;
+		else if(add_minute()==-1 && grade==2) // silver, ì´ˆê³¼í•˜ì§€ ì•ŠìŒ
+			return 29.95;
+		else if(grade==1) { //gold
+			return 49.95 + add_minute()*0.45;
+		}
+		else if(grade==2){
+			return 29.95 + add_minute()*0.54;
+		}
+		else {
+			return -1;
+		}
+	}
+	
+	public int add_line(){
+		if(line-3 < 0) {
+			return -1;
+		}
+		else{
+			return line-3;
+		}
+	}
+	
+	public double cal_line() {
+		if(line==1){
+			return 0;
+		}
+		else if(add_line()<0 && grade==1){ //gold ê·¸ëƒ¥ ì¶”ê°€ìš”ê¸ˆ
+			return 14.5 * (line-1);
+		}
+		else if(add_line()<0 && grade==2){ // silver ê·¸ëƒ¥ ì¶”ê°€ìš”ê¸ˆ
+			return 21.5 * (line-1);
+		}
+		if(add_line()>=0 && grade==1){ //gold & ê°€ì¡±í• ì¸ 0
+			return 14.5 * 2 + add_line() * 5; 
+		}
+		if(add_line()>=0 && grade==2){ // silver & ê°€ì¡±í• ì¸ 0
+			return 21.5 * 2 + add_line() * 5;
+		}
+		else{
+			return -1;
+		}
+	}
+	
 	public String result(){
 		if(money()==0)
-			return "Àß¸øµÈ °ªÀ» ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.";
-		else
-			return "±İ¾×Àº $"+money()+" ÀÔ´Ï´Ù.";
+			return "ì˜ëª»ëœ ê°’ì„ ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.";
+		else{
+			String str = String.format("%.2f", money());
+			return "ê¸ˆì•¡ì€ $"+str+" ì…ë‹ˆë‹¤.";
+		}
 	}
+	@SuppressWarnings("resource")
 	public static void main(String[] args){
+		while(true){
 		Calculator cal = new Calculator();
 		Scanner gradesc = new Scanner(System.in);
 		Scanner timesc = new Scanner(System.in);
-		System.out.print("µî±ŞÀ» ÀÔ·ÂÇÏ¼¼¿ä : Gold(1), Silver(2) : ");
+		Scanner linesc = new Scanner(System.in);
+		Scanner yn = new Scanner(System.in);
+		String question;
+		System.out.print("ë“±ê¸‰ì„ ì…ë ¥í•˜ì„¸ìš” : Gold(1), Silver(2) : ");
 		cal.grade = gradesc.nextInt();
-		System.out.print("ÅëÈ­ ½Ã°£À» Àû¾îÁÖ¼¼¿ä(ºĞ) : ");
+		System.out.print("í†µí™” ì‹œê°„ì„ ì ì–´ì£¼ì„¸ìš”(ë¶„) : ");
 		cal.time = timesc.nextInt();
-		System.out.print("ÅëÈ­ ½Ã°£À» Àû¾îÁÖ¼¼¿ä(ºĞ) : ");
-		cal.time = timesc.nextInt();
-		cal.timesc = next. 
+		System.out.print("íšŒì„  ê°œìˆ˜ë¥¼ ì ì–´ì£¼ì„¸ìš” : ");
+		cal.line = linesc.nextInt();
+		System.out.println(cal.result());
+		System.out.print("ê³„ì† ì§„í–‰í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(y/n) : ");
+		question = yn.next();
+		if(question.equals("n")){
+			break;
+		}
+		else{
+			System.out.println();
+			continue;
+		}
+		}
 	}
 }
