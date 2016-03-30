@@ -58,6 +58,8 @@
             <id>default-prepare-agent</id>
             <goals>
                 <goal>prepare-agent</goal>
+            </goals>
+          </execution>
                 <!---목적지 설정
                 <configuration>
        		              <propertyName>jacoco.agent.argLine</propertyName>
