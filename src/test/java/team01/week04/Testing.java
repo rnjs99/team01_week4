@@ -12,8 +12,6 @@ public class Testing {
 		Scanner gradesc = new Scanner(System.in);
 		Scanner timesc = new Scanner(System.in);
 		Scanner linesc = new Scanner(System.in);
-		Scanner yn = new Scanner(System.in);
-		String question;
 		Loginfo.info("등급을 입력하세요 : Gold(1), Silver(2) : ");
 		cal.grade = gradesc.nextInt();
 		Loginfo.info("통화 시간을 적어주세요(분) : ");
@@ -31,7 +29,7 @@ public class Testing {
 		//assertEquals(a,b)
 	}
 	@Test
-	public void testcal_minute(){
+	public void testcalminute(){
 		//assertEquals(a,b)
 	}
 
