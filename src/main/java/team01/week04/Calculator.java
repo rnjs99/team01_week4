@@ -72,7 +72,7 @@ public class Calculator {
 	}
 
 	public String result() {
-		if (money() > 0 && momey()< 0.1)
+		if (money() >= 0 && momey() < 0.1)
 			return "잘못된 값을 입력하셨습니다.";
 		else {
 			return "금액은 $" + money() + " 입니다.";
