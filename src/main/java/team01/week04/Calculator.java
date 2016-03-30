@@ -99,7 +99,7 @@ public class Calculator {
 			Loginfo.info("계속 진행하시겠습니까?(y/n) : ");
 			question = yn.next();
 			Loginfo.info("\n");
-			if (question.equals("n"))
+			if ("n".equals(question))
 				break;
 		}
 	}
