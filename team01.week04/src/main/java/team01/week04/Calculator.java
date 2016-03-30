@@ -1,3 +1,4 @@
+package team01.week04;
 import java.util.Scanner;
 
 public class Calculator {
