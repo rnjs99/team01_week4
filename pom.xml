@@ -54,6 +54,7 @@
        	  <dataFile>${jaCoCoExecutionDataFile}</dataFile>
        	  <destfile>${basedir}/target/coverage-reports/jacoco-unit.exec</destfile> <!-- add -->
           <datafile>${basedir}/target/coverage-reports/jacoco-unit.exec</datafile> <!-- add -->
+           <sonar.jacoco.itReportPath>${project.basedir}/reports/jacoco.exec</sonar.jacoco.itReportPath>
         </configuration>
         <executions>
           <execution>
