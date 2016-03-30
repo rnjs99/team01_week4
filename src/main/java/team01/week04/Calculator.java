@@ -11,10 +11,12 @@ public class Calculator {
 	int line;
 
 	public double money() {
+		double result = calline() + calminute();
+		result = result-(100*result-(int)100*result)/100;
 		if (grade == 1) {// gold
-			return calline() + calminute();
+			return result;
 		} else if (grade == 2) {// silver
-			return calline() + calminute();
+			return result;
 		}
 		return 0;
 	}
@@ -73,8 +75,7 @@ public class Calculator {
 		if (money() == 0)
 			return "잘못된 값을 입력하셨습니다.";
 		else {
-			String str = String.format("%.2f", money());
-			return "금액은 $" + str + " 입니다.";
+			return "금액은 $" + money() + " 입니다.";
 		}
 	}
 
