@@ -72,7 +72,7 @@ public class Calculator {
 	}
 
 	public String result() {
-		if (money() == 0.000000000000000055511151231257827021181583404541015600)
+		if (money() == 0)
 			return "잘못된 값을 입력하셨습니다.";
 		else {
 			return "금액은 $" + money() + " 입니다.";
@@ -81,7 +81,7 @@ public class Calculator {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		 final Logger Loginfo = Logger.getLogger(
+		 final Logger logInfo = Logger.getLogger(
 				    Thread.currentThread().getStackTrace()[0].getClassName() );
 		for (;;) {
 			Calculator cal = new Calculator();
@@ -90,16 +90,16 @@ public class Calculator {
 			Scanner linesc = new Scanner(System.in);
 			Scanner yn = new Scanner(System.in);
 			String question;
-			Loginfo.info("등급을 입력하세요 : Gold(1), Silver(2) : ");
+			logInfo.info("등급을 입력하세요 : Gold(1), Silver(2) : ");
 			cal.grade = gradesc.nextInt();
-			Loginfo.info("통화 시간을 적어주세요(분) : ");
+			logInfo.info("통화 시간을 적어주세요(분) : ");
 			cal.time = timesc.nextInt();
-			Loginfo.info("회선 개수를 적어주세요 : ");
+			logInfo.info("회선 개수를 적어주세요 : ");
 			cal.line = linesc.nextInt();
-			Loginfo.info(cal.result());
-			Loginfo.info("계속 진행하시겠습니까?(y/n) : ");
+			logInfo.info(cal.result());
+			logInfo.info("계속 진행하시겠습니까?(y/n) : ");
 			question = yn.next();
-			Loginfo.info("\n");
+			logInfo.info("\n");
 			if ("n".equals(question))
 				break;
 		}
