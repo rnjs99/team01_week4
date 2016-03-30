@@ -26,7 +26,7 @@ public class Testing {
 		Calculator cal3 = new Calculator();//assertEquals(a,b)
 		cal3.grade = 1;
 		cal3.time = 878;
-		assertTrue(cal3.calminute()==49.95);
+		assertTrue((cal3.calminute()-49.95)<0.1&&(cal3.calminute()-49.95)>=0);
 	}
 
 	@Test
