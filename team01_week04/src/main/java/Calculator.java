@@ -17,19 +17,19 @@ public class Calculator {
 	
 	public String result(){
 		if(money()==0)
-			return "Àß¸øµÈ °ªÀ» ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.";
+			return "ì˜ëª»ëœ ê°’ì„ ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.";
 		else
-			return "±İ¾×Àº $"+money()+" ÀÔ´Ï´Ù.";
+			return "ê¸ˆì•¡ì€ $"+money()+" ì…ë‹ˆë‹¤.";
 	}
 	public static void main(String[] args){
 		Calculator cal = new Calculator();
 		Scanner gradesc = new Scanner(System.in);
 		Scanner timesc = new Scanner(System.in);
-		System.out.print("µî±ŞÀ» ÀÔ·ÂÇÏ¼¼¿ä : Gold(1), Silver(2) : ");
+		System.out.print("ë“±ê¸‰ì„ ì…ë ¥í•˜ì„¸ìš” : Gold(1), Silver(2) : ");
 		cal.grade = gradesc.nextInt();
-		System.out.print("ÅëÈ­ ½Ã°£À» Àû¾îÁÖ¼¼¿ä(ºĞ) : ");
+		System.out.print("í†µí™” ì‹œê°„ì„ ì ì–´ì£¼ì„¸ìš”(ë¶„) : ");
 		cal.time = timesc.nextInt();
-		System.out.print("ÅëÈ­ ½Ã°£À» Àû¾îÁÖ¼¼¿ä(ºĞ) : ");
+		System.out.print("í†µí™” ì‹œê°„ì„ ì ì–´ì£¼ì„¸ìš”(ë¶„) : ");
 		cal.time = timesc.nextInt();
 		cal.timesc = next. 
 	}
