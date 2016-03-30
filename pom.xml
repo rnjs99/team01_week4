@@ -62,12 +62,12 @@
                 <goal>prepare-agent</goal>
             </goals>
           </execution>
-          <!--<execution> <!-- add -->
-          <!--  <id>prepare-unit-tests</id> <!-- add -->
-          <!--  <goals> <!-- add -->
-          <!--    <goal>prepare-agent</goal> <!-- add -->
-          <!--  </goals> <!-- add -->
-         <!-- </execution> <!-- add -->
+          <!--<execution>  add -->
+          <!--  <id>prepare-unit-tests</id> add -->
+          <!--  <goals> add -->
+          <!--    <goal>prepare-agent</goal> add -->
+          <!--  </goals>  add -->
+         <!-- </execution>  add -->
            <!-- <execution> 
                   			<id>jacoco-report</id>
                   		  <phase>verify</phase>
