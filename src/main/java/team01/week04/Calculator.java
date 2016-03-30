@@ -33,10 +33,10 @@ public class Calculator {
 
 	public double calminute() {
 		if(grade == 1){ // gold
-		addminute() == -1? return 49.95:return return 49.95 + addminute() * 0.45;
+			return addminute() == -1?  49.95: 49.95 + addminute() * 0.45;
 		}
 		else if (grade == 2){// silver
-		addminute() == -1? return 29.95:return return 29.95 + addminute() * 0.54;
+			return  addminute() == -1? 29.95: 29.95 + addminute() * 0.54;
 		}
 		else{return -1;}
 	}
