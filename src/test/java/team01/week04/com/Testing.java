@@ -1,4 +1,4 @@
-package week04.team01;
+package team01.week04.com;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
