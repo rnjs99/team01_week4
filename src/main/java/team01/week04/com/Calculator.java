@@ -63,10 +63,10 @@ public class Calculator {
 		}
 
 	public String result() {
-		if (money()!=0)
-			return "금액은 $" + money() + " 입니다.";	
-		else {
+		if (money()<29.95)
 			return "잘못된 값을 입력하셨습니다.";
+		else {
+			return "금액은 $" + money() + " 입니다.";
 		}
 	}
 
