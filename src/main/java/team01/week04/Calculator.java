@@ -12,7 +12,7 @@ public class Calculator {
 		} else if (grade == 2) {// silver
 			return calline() + cal_minute();
 		}
-		return 0;
+		return 0.0f;
 	}
 
 	public int addminute() {
@@ -66,7 +66,7 @@ public class Calculator {
 	}
 
 	public String result() {
-		if (money() == 0)
+		if (money() == 0.0f)
 			return "잘못된 값을 입력하셨습니다.";
 		else {
 			String str = String.format("%.2f", money());
