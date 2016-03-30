@@ -3,10 +3,8 @@ package team01.week04;
 import java.util.Scanner;
 
 public class Calculator {
-	String[] RawType;
-	int grade;
-	int time;
-	int line;
+	String[] raw_type;
+	int grade, time, line;
 
 	public double money() {
 		if (grade == 1) {// gold
@@ -17,7 +15,7 @@ public class Calculator {
 		return 0;
 	}
 
-	public int AddMinute() {
+	public int add_minute() {
 		if (grade == 1) { // gold
 			return (time - 1000 >= 0 ? time - 1000 : -1);
 		} else if (grade == 2) { // silver
@@ -28,14 +26,14 @@ public class Calculator {
 	}
 
 	public double cal_minute() {
-		if (AddMinute() == -1 && grade == 1) // gold, 珥덇낵�븯吏� �븡�쓬
+		if (add_minute() == -1 && grade == 1) // gold, 초과하지 않음
 			return 49.95;
-		else if (AddMinute() == -1 && grade == 2) // silver, 珥덇낵�븯吏� �븡�쓬
+		else if (add_minute() == -1 && grade == 2) // silver, 초과하지 않음
 			return 29.95;
 		else if (grade == 1) { // gold
-			return 49.95 + AddMinute() * 0.45;
+			return 49.95 + add_minute() * 0.45;
 		} else if (grade == 2) {
-			return 29.95 + AddMinute() * 0.54;
+			return 29.95 + add_minute() * 0.54;
 		} else {
 			return -1;
 		}
@@ -52,15 +50,15 @@ public class Calculator {
 	public double cal_line() {
 		if (line == 1) {
 			return 0;
-		} else if (add_line() < 0 && grade == 1) { // gold 洹몃깷 異붽��슂湲�
+		} else if (add_line() < 0 && grade == 1) { // gold 그냥 추가요금
 			return 14.5 * (line - 1);
-		} else if (add_line() < 0 && grade == 2) { // silver 洹몃깷 異붽��슂湲�
+		} else if (add_line() < 0 && grade == 2) { // silver 그냥 추가요금
 			return 21.5 * (line - 1);
 		}
-		if (add_line() >= 0 && grade == 1) { // gold & 媛�議깊븷�씤 0
+		if (add_line() >= 0 && grade == 1) { // gold & 가족할인 0
 			return 14.5 * 2 + add_line() * 5;
 		}
-		if (add_line() >= 0 && grade == 2) { // silver & 媛�議깊븷�씤 0
+		if (add_line() >= 0 && grade == 2) { // silver & 가족할인 0
 			return 21.5 * 2 + add_line() * 5;
 		} else {
 			return -1;
@@ -69,10 +67,10 @@ public class Calculator {
 
 	public String result() {
 		if (money() == 0)
-			return "�옒紐삳맂 媛믪쓣 �엯�젰�븯�뀲�뒿�땲�떎.";
+			return "잘못된 값을 입력하셨습니다.";
 		else {
 			String str = String.format("%.2f", money());
-			return "湲덉븸�� $" + str + " �엯�땲�떎.";
+			return "금액은 $" + str + " 입니다.";
 		}
 	}
 
@@ -85,14 +83,14 @@ public class Calculator {
 			Scanner linesc = new Scanner(System.in);
 			Scanner yn = new Scanner(System.in);
 			String question;
-			System.out.print("�벑湲됱쓣 �엯�젰�븯�꽭�슂 : Gold(1), Silver(2) : ");
+			System.out.print("등급을 입력하세요 : Gold(1), Silver(2) : ");
 			cal.grade = gradesc.nextInt();
-			System.out.print("�넻�솕 �떆媛꾩쓣 �쟻�뼱二쇱꽭�슂(遺�) : ");
+			System.out.print("통화 시간을 적어주세요(분) : ");
 			cal.time = timesc.nextInt();
-			System.out.print("�쉶�꽑 媛쒖닔瑜� �쟻�뼱二쇱꽭�슂 : ");
+			System.out.print("회선 개수를 적어주세요 : ");
 			cal.line = linesc.nextInt();
 			System.out.println(cal.result());
-			System.out.print("怨꾩냽 吏꾪뻾�븯�떆寃좎뒿�땲源�?(y/n) : ");
+			System.out.print("계속 진행하시겠습니까?(y/n) : ");
 			question = yn.next();
 			if (question.equals("n")) {
 				break;
