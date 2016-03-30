@@ -50,14 +50,17 @@ public class Calculator {
 	}
 
 	public double calline() {
-		if (line == 1) {
-			return 0;}
-		if(grade==1)
-			addline()>=0?return 14.5 * 2 + addline() * 5:return -1;
-		else if(grade ==2)
-			addline()>=0?return 21.5 * 2 + addline() * 5:return -1;
-		return 0;
-	}
+			
+			if (line == 1) {
+				return 0;}
+			if(addline()>=0)
+				return (grade==1)? 14.5 * 2 + addline() * 5 :21.5 * 2 + addline() * 5;
+			else if(addline()<0)
+				return (grade==1)?14.5 * (line - 1):21.5 * (line - 1);
+			else
+				return -1;
+			
+		}
 
 	public String result() {
 		if (money() >= 0 && momey() < 0.1)
