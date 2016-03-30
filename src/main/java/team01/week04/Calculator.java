@@ -32,17 +32,13 @@ public class Calculator {
 	}
 
 	public double calminute() {
-		if (addminute() == -1 && grade == 1) // gold, 초과하지 않음
-			return 49.95;
-		else if (addminute() == -1 && grade == 2) // silver, 초과하지 않음
-			return 29.95;
-		else if (grade == 1) { // gold
-			return 49.95 + addminute() * 0.45;
-		} else if (grade == 2) {
-			return 29.95 + addminute() * 0.54;
-		} else {
-			return -1;
+		if(grade == 1){ // gold
+		addminute() == -1? return 49.95:return return 49.95 + addminute() * 0.45;
 		}
+		else if (grade == 2){// silver
+		addminute() == -1? return 29.95:return return 29.95 + addminute() * 0.54;
+		}
+		else{return -1;}
 	}
 
 	public int addline() {
