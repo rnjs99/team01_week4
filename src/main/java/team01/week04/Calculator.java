@@ -1,5 +1,7 @@
-package team01_week04;
 import java.util.Scanner;
+import java.util.logging.Logger;
+
+package team01.week04;
 
 public class Calculator {
 	int grade;
@@ -8,11 +10,11 @@ public class Calculator {
 
 	public double money() {
 		if (grade == 1) {// gold
-			return calline() + cal_minute();
+			return calline() + calminute();
 		} else if (grade == 2) {// silver
-			return calline() + cal_minute();
+			return calline() + calminute();
 		}
-		return 0.0f;
+		return 0;
 	}
 
 	public int addminute() {
@@ -25,7 +27,7 @@ public class Calculator {
 		}
 	}
 
-	public double cal_minute() {
+	public double calminute() {
 		if (addminute() == -1 && grade == 1) // gold, 초과하지 않음
 			return 49.95;
 		else if (addminute() == -1 && grade == 2) // silver, 초과하지 않음
@@ -66,7 +68,7 @@ public class Calculator {
 	}
 
 	public String result() {
-		if (Float.floatToRawIntBits(money()) == 0)
+		if (money() == 0)
 			return "잘못된 값을 입력하셨습니다.";
 		else {
 			String str = String.format("%.2f", money());
@@ -74,9 +76,9 @@ public class Calculator {
 		}
 	}
 
-		@SuppressWarnings("resource")
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		 final Logger LOGGER = Logger.getLogger(
+		 final Logger Loginfo = Logger.getLogger(
 				    Thread.currentThread().getStackTrace()[0].getClassName() );
 		for (;;) {
 			Calculator cal = new Calculator();
@@ -85,21 +87,18 @@ public class Calculator {
 			Scanner linesc = new Scanner(System.in);
 			Scanner yn = new Scanner(System.in);
 			String question;
-			LOGGER.info("등급을 입력하세요 : Gold(1), Silver(2) : ");
+			Loginfo.info("등급을 입력하세요 : Gold(1), Silver(2) : ");
 			cal.grade = gradesc.nextInt();
-			LOGGER.info("통화 시간을 적어주세요(분) : ");
+			Loginfo.info("통화 시간을 적어주세요(분) : ");
 			cal.time = timesc.nextInt();
-			LOGGER.info("회선 개수를 적어주세요 : ");
+			Loginfo.info("회선 개수를 적어주세요 : ");
 			cal.line = linesc.nextInt();
-			LOGGER.info(cal.result());
-			LOGGER.info("계속 진행하시겠습니까?(y/n) : ");
+			Loginfo.info(cal.result());
+			Loginfo.info("계속 진행하시겠습니까?(y/n) : ");
 			question = yn.next();
-			if (question.equals("n")) {
+			Loginfo.info("\n");
+			if (question.equals("n"))
 				break;
-			} else {
-				LOGGER.info("\n");
-				continue;
-			}
 		}
 	}
 }
