@@ -50,13 +50,28 @@
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.7.6.201602180812</version>
+        <configuration>
+       	  <dataFile>${jaCoCoExecutionDataFile}</dataFile>
+        </configuration>
         <executions>
           <execution>
             <id>default-prepare-agent</id>
             <goals>
                 <goal>prepare-agent</goal>
+                <!---목적지 설정
+                <configuration>
+       		              <propertyName>jacoco.agent.argLine</propertyName>
+       		              <destFile>${jaCoCoExecutionDataFile}</destFile>
+			          </configuration>
             </goals>
-          </execution>
+            </execution>
+            <execution> 
+                  			<id>jacoco-report</id>
+                  		  <phase>verify</phase>
+                  		  <goals>
+                  			<goal>report</goal>
+                  		  </goals>
+		        </execution>	-->
           <!-- test 완료 후 goal옵션 적용할 때까진 주석처리
           <execution>
             <id>default-report</id>
