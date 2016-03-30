@@ -1,44 +1,41 @@
-package team01;
+package team01.week04;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 import team01_week04.Calculator;
 
-
 public class Testing {
-	@Before
-	public void createCalculator(){
-		Calculator cal = new Calculator();
-		Scanner gradesc = new Scanner(System.in);
-		Scanner timesc = new Scanner(System.in);
-		Scanner linesc = new Scanner(System.in);
-		Loginfo.info("등급을 입력하세요 : Gold(1), Silver(2) : ");
-		cal.grade = gradesc.nextInt();
-		Loginfo.info("통화 시간을 적어주세요(분) : ");
-		cal.time = timesc.nextInt();
-		Loginfo.info("회선 개수를 적어주세요 : ");
-		cal.line = linesc.nextInt();
-		Loginfo.info(cal.result());
-	}
+
 	@Test
-	public void testaddine(){
-		//assertEquals(a,b)
+	public void testaddline(){
+		Calculator cal1 = new Calculator(); //assertEquals(a,b)
+		cal1.line = 5;
+		assertEquals(cal1.addline(),2);
 	}
+
 	@Test
-	public void testcalline(){
-		//assertEquals(a,b)
+	public void testcalline(){ // 회선으로만 추가되는 요금 test
+		Calculator cal2 = new Calculator();//assertEquals(a,b)
+		cal2.grade = 1;
+		cal2.line = 4;
+		assertTrue(cal2.calline()==34);
 	}
+	
 	@Test
 	public void testcalminute(){
-		//assertEquals(a,b)
+		Calculator cal3 = new Calculator();//assertEquals(a,b)
+		cal3.grade = 1;
+		cal3.time = 878;
+		assertTrue(cal3.calminute()==49.95);
 	}
 
 	@Test
 	public void testmoney(){		
-		//assertEquals(a,b)
-	}
-	@Test
-	public void testresult(){		
-		//assertEquals(a,b)
+		Calculator cal4 = new Calculator();//assertEquals(a,b)
+		cal4.grade = 2;
+		cal4.line = 2;
+		cal4.time = 523;
+		int temp = (int)cal4.money();
+		assertTrue(temp==63);
 	}
 }
