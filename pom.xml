@@ -50,6 +50,12 @@
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.7.6.201602180812</version>
+        <configuration>
+       	  <dataFile>${jaCoCoExecutionDataFile}</dataFile>
+       	  <destfile>${basedir}/target/coverage-reports/jacoco-unit.exec</destfile> <!-- add -->
+          <datafile>${basedir}/target/coverage-reports/jacoco-unit.exec</datafile> <!-- add -->
+           <sonar.jacoco.itReportPath>${project.basedir}/reports/jacoco.exec</sonar.jacoco.itReportPath>
+        </configuration>
         <executions>
           <execution>
             <id>default-prepare-agent</id>
@@ -57,6 +63,27 @@
                 <goal>prepare-agent</goal>
             </goals>
           </execution>
+          <execution>
+            <id>report</id>
+            <phase>prepare-package</phase>
+            <goals>
+                <goal>report</goal>
+            </goals>
+	 </execution>
+          <!--<execution>  add -->
+          <!--  <id>prepare-unit-tests</id> add -->
+          <!--  <goals> add -->
+          <!--    <goal>prepare-agent</goal> add -->
+          <!--  </goals>  add -->
+         <!-- </execution>  add -->
+           <!-- <execution> 
+                  			<id>jacoco-report</id>
+                  		  <phase>verify</phase>
+                  		  <goals>
+                  			<goal>report</goal>
+                  		  </goals>
+		        </execution>	-->
+          <!-- test 완료 후 goal옵션 적용할 때까진 주석처리
           <execution>
             <id>default-report</id>
             <phase>prepare-package</phase>
@@ -69,7 +96,7 @@
             <goals>
                 <goal>check</goal>
             </goals>
-          </execution>
+          </execution>  -->
         </executions>
       </plugin>
    </plugins>
