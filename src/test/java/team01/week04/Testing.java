@@ -7,6 +7,15 @@ import team01.week04.Calculator;
 public class Testing {
 
 	@Test
+	public void testMoney(){
+		Calculator cal6 = new Calculator();//assertEquals(a,b)
+		cal6.grade = 1;
+		cal6.line = 1;
+		cal6.time = 878;
+		assertTrue(cal6.money() == 0.0);
+	}
+	
+	@Test
 	public void testaddline(){
 		Calculator cal1 = new Calculator(); //assertEquals(a,b)
 		cal1.line = 5;
