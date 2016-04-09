@@ -7,7 +7,7 @@ import team01.week04.Calculator;
 public class Testing {
 
 	@Test
-	public void testMoney(){
+	public void testMoneyGold(){
 		Calculator cal6 = new Calculator();//assertEquals(a,b)
 		cal6.grade = 1;
 		cal6.line = 1;
@@ -16,7 +16,7 @@ public class Testing {
 	}
 	
 	@Test
-	public void testMoney(){
+	public void testMoneySilver(){
 		Calculator cal6 = new Calculator();//assertEquals(a,b)
 		cal6.grade = 2;
 		cal6.line = 1;
